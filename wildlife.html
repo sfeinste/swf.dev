@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wildlife Photography - Spruce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=DM+Serif+Display&family=Lora:ital,wght@0,400;0,500;1,400&family=Playfair+Display:wght@400;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul class="nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="berm-brain.html">Berm Brain</a></li>
+            <li><a href="satchel-of-storing.html">Satchel of Storing</a></li>
+            <li><a href="photography.html">Photography</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <div class="project-content">
+            <a href="photography.html" class="back-link">← Back to Photography</a>
+            <h1>Wildlife</h1>
+            
+            <div class="project-description">
+                <p>Birds, bugs, and everything in between.</p>
+                
+                <div id="gallery"></div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="gallery.js"></script>
+    <script>
+        // Initialize gallery with wildlife photos
+        new Gallery('wildlife');
+    </script>
+</body>
+</html>

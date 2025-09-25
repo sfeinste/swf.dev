@@ -1,0 +1,536 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Mid-century modern cottage core palette */
+  
+    
+    /* Alternative options - uncomment to try */
+    
+    /* Option 2: Warmer sage */
+    /* --bg: #5d6b5a;
+    --text: #fdf9f3;
+    --text-dim: #ddd0b8;
+    --accent: #9b8469; */
+    
+    /* Option 3: Deep forest */
+    --bg: #3e4a3d;
+    --text: #f9f4ec;
+    --text-dim: #d6c9b3;
+    --accent: #a08974;
+    
+    /* Option 4: Olive tones */
+    /* --bg: #565c4a;
+    --text: #fefaf2;
+    --text-dim: #ded2b9;
+    --accent: #b8956f; */
+}
+
+html, body {
+    min-height: 100%;
+}
+
+body {
+    /* Option 1: Classic Serif - Crimson Text (current) */
+    /* font-family: 'Crimson Text', Georgia, serif; */
+    
+    /* Option 2: Modern Serif - Lora */
+    font-family: 'Lora', Georgia, serif;
+    
+    /* Option 3: Editorial - Playfair Display for headers, Source Serif for body */
+    /* font-family: 'Source Serif 4', Georgia, serif; */
+    
+    /* Option 4: Clean and timeless - System fonts with serif fallback */
+    /* font-family: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif; */
+    
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 17px;
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 2rem;
+    z-index: 100;
+    pointer-events: none;
+}
+
+nav .nav {
+    pointer-events: auto;
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    justify-content: center;
+}
+
+.nav a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: var(--accent);
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+}
+
+.intro {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    font-weight: 400;
+    text-align: center;
+    /* Option for display font on name */
+    /* font-family: 'DM Serif Display', serif; */
+    /* font-family: 'Playfair Display', serif; */
+}
+
+.intro .greeting {
+    color: var(--text-dim);
+    font-weight: 300;
+    font-style: italic;
+}
+
+.intro .name {
+    color: var(--accent);
+    /* Try different display fonts for the name */
+    font-family: 'DM Serif Display', serif;
+    /* font-family: 'Playfair Display', serif; */
+    font-weight: 400;
+}
+
+.content {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    max-width: 900px;
+}
+
+.photo img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+.about p {
+    margin-bottom: 1rem;
+    color: var(--text-dim);
+    max-width: 500px;
+    font-size: 1rem;
+}
+
+.about a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.about a:hover {
+    border-bottom-color: var(--accent);
+}
+
+.currently-reading {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(127, 166, 109, 0.2);
+}
+
+.reading-label {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.book-link {
+    color: var(--accent);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.book-link:hover {
+    opacity: 0.8;
+}
+
+.contact-links {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(127, 166, 109, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.contact-links a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contact-links .icon {
+    width: 20px;
+    height: 20px;
+}
+
+.contact-links a:hover {
+    opacity: 0.8;
+    border-bottom: none;
+}
+
+/* Project pages */
+.project-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.project-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+    color: var(--accent);
+}
+
+.project-subtitle {
+    color: var(--text-dim);
+    margin-bottom: 3rem;
+    font-size: 1rem;
+}
+
+.project-description h3 {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+
+.project-description p {
+    color: var(--text-dim);
+    margin-bottom: 1rem;
+}
+
+.project-links {
+    margin-top: 3rem;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    color: var(--text);
+    text-decoration: none;
+    border: 1px solid var(--text-dim);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* Berm Brain specific styles */
+.elevator-pitch {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: rgba(127, 166, 109, 0.1);
+    border-radius: 8px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.feature h4 {
+    color: var(--text);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.feature p {
+    color: var(--text-dim);
+    line-height: 1.6;
+}
+
+.screenshots {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    padding: 2rem 0;
+    margin: 2rem 0;
+}
+
+.screenshot img {
+    width: 250px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.beta-signup {
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: rgba(127, 166, 109, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.beta-signup h3 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    nav {
+        position: relative;
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    main {
+        min-height: auto;
+        padding: 2rem 1rem 6rem 1rem;
+        margin-top: 0;
+        display: block;
+    }
+    
+    .intro {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .content {
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 0;
+        padding-top: 1rem;
+    }
+    
+    .photo img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .about {
+        text-align: center;
+    }
+    
+    .about a {
+        border-bottom: 1px solid var(--accent);
+    }
+    
+    .nav {
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+        font-size: 0.85rem;
+    }
+    
+    .currently-reading {
+        text-align: left;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .contact-links {
+        text-align: left;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 4rem;
+        margin-bottom: 2rem;
+    }
+    
+    .project-links {
+        flex-direction: column;
+    }
+}
+
+/* Gallery styles */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.gallery-card {
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    background-color: var(--bg-light);
+    position: relative;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-card:hover {
+    transform: scale(1.02);
+}
+
+.gallery-card:hover .gallery-card-overlay {
+    opacity: 1;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-card h3 {
+    color: var(--text);
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+#gallery {
+    column-count: 3;
+    column-gap: 1rem;
+    padding: 2rem 0;
+}
+
+@media (max-width: 1200px) {
+    #gallery {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    #gallery {
+        column-count: 1;
+    }
+}
+
+.gallery-item {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: rgba(127, 166, 109, 0.1);
+    position: relative;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.fullscreen-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.fullscreen-overlay.active {
+    opacity: 1;
+}
+
+.fullscreen-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+.close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: none;
+    border: none;
+    color: var(--text);
+    font-size: 3rem;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.close-btn:hover {
+    opacity: 1;
+}
+
+.back-link {
+    display: inline-block;
+    color: var(--text-dim);
+    text-decoration: none;
+    margin-bottom: 1.5rem;
+    transition: color 0.3s ease;
+    position: relative;
+    z-index: 10;
+    padding: 0.5rem 0;
+}
+
+.back-link:hover {
+    color: var(--accent);
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
