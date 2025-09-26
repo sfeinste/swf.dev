@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spruce Feinstein - Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=DM+Serif+Display&family=Lora:ital,wght@0,400;0,500;1,400&family=Playfair+Display:wght@400;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .resume-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .resume-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .resume-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        
+        .resume-header .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+        
+        .resume-header .contact-info a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .resume-header .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .resume-section {
+            margin-bottom: 2.5rem;
+        }
+        
+        .resume-section h2 {
+            font-size: 1.4rem;
+            color: var(--accent);
+            border-bottom: 2px solid var(--accent-dark);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .job {
+            margin-bottom: 2rem;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .job-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text);
+        }
+        
+        .company {
+            color: var(--accent);
+            font-weight: 500;
+        }
+        
+        .job-dates {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+        }
+        
+        .job-location {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+        
+        .job-description {
+            margin-top: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        .job-description ul {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+        }
+        
+        .job-description li {
+            margin-bottom: 0.4rem;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .skill-category h3 {
+            font-size: 1rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+        
+        .skill-category ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .skill-category li {
+            padding: 0.2rem 0;
+            color: var(--text);
+        }
+        
+        .back-home {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+        
+        .back-home:hover {
+            text-decoration: underline;
+        }
+        
+        .download-pdf {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.6rem 1.2rem;
+            background-color: var(--accent-dark);
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+        
+        .download-pdf:hover {
+            background-color: var(--accent);
+        }
+        
+        @media (max-width: 768px) {
+            .resume-header h1 {
+                font-size: 2rem;
+            }
+            
+            .job-header {
+                flex-direction: column;
+                gap: 0.3rem;
+            }
+            
+            .resume-container {
+                padding: 60px 20px 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="index.html" class="back-home">← Home</a>
+    
+    <div class="resume-container">
+        <header class="resume-header">
+            <h1>Spruce Feinstein</h1>
+            <div class="contact-info">
+                <a href="mailto:sprucefeinstein@gmail.com">sprucefeinstein@gmail.com</a>
+                <span>Bentonville, AR</span>
+                <a href="https://linkedin.com/in/spruce-f-35511426" target="_blank">LinkedIn</a>
+                <a href="https://github.com/sfeinste" target="_blank">GitHub</a>
+            </div>
+            <a href="Spruce Feinstein Resume.pdf" download class="download-pdf">📄 Download PDF Resume</a>
+        </header>
+
+        <section class="resume-section">
+            <h2>Professional Summary</h2>
+            <p>Staff Software Engineer with 10+ years of experience designing and delivering scalable, cloud-native systems. Proven leadership in SaaS platforms, microservices, and event-driven architectures. Passionate about driving engineering excellence through DevOps, distributed systems, and modern web technologies.</p>
+        </section>
+
+        <section class="resume-section">
+            <h2>Experience</h2>
+            
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Staff Software Engineer</span> at <span class="company">Shaper Tools</span>
+                    </div>
+                    <span class="job-dates">October 2022 - Present</span>
+                </div>
+                <div class="job-location">Remote</div>
+                <div class="job-description">
+                    <ul>
+                        <li>Leading development of web services for robotic woodworking tools and digital fabrication apps using Node.js, React, and Kubernetes</li>
+                        <li>Architecting and maintaining a browser-based vector design tool</li>
+                        <li>Managing IoT and embedded device telemetry, OTA flows, and fleet management</li>
+                        <li>Designing scalable user file storage platforms leveraging PostgreSQL, DynamoDB, and MongoDB</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Senior Software Engineer</span> at <span class="company">RaiseRight</span>
+                    </div>
+                    <span class="job-dates">October 2021 - October 2022</span>
+                </div>
+                <div class="job-location">Remote</div>
+                <div class="job-description">
+                    <ul>
+                        <li>Developed and maintained a high-volume eCommerce platform handling $800M+ in annual transactions using React, React Native, and .NET</li>
+                        <li>Focused on transactional integrity and operational security</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Lead Architect</span> at <span class="company">Nacelle</span>
+                    </div>
+                    <span class="job-dates">April 2021 - October 2021</span>
+                </div>
+                <div class="job-location">Remote</div>
+                <div class="job-description">
+                    <ul>
+                        <li>Designed and built a high-performance, event-driven SaaS platform for headless eCommerce using Kafka, Cassandra, and Node.js</li>
+                        <li>Developed a scalable Kafka-based data ingestion pipeline supporting millions of daily active users</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Senior Software Engineer</span> at <span class="company">J.B. Hunt Transport Services</span>
+                    </div>
+                    <span class="job-dates">April 2020 - April 2021</span>
+                </div>
+                <div class="job-location">Arkansas</div>
+                <div class="job-description">
+                    <ul>
+                        <li>Full-stack developer on a flagship React Native app backed by Java microservices</li>
+                        <li>Led cloud migration from on-prem to Kubernetes, modernizing microservices and improving scalability</li>
+                        <li>Championed team upskilling in Docker, Kubernetes, and cloud-native practices</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Software Architect</span> at <span class="company">RevUnit</span>
+                    </div>
+                    <span class="job-dates">October 2016 - April 2020</span>
+                </div>
+                <div class="job-location">Arkansas</div>
+                <div class="job-description">
+                    <ul>
+                        <li>Led development teams and collaborated directly with Fortune 500 clients</li>
+                        <li>Acted as a solutions architect with strong focus on DevOps and system reliability</li>
+                        <li>Implemented infrastructure and deployment pipelines for high availability</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Software Engineer</span> at <span class="company">CaseStack</span>
+                    </div>
+                    <span class="job-dates">April 2015 - September 2016</span>
+                </div>
+                <div class="job-location">Arkansas</div>
+                <div class="job-description">
+                    <ul>
+                        <li>Designed and developed a transportation management system using the MEAN stack</li>
+                        <li>Managed Kubernetes-based infrastructure for efficient service deployment</li>
+                        <li>Focused on building disruptive logistics technology</li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="resume-section">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <ul>
+                        <li>JavaScript</li>
+                        <li>TypeScript</li>
+                        <li>SQL</li>
+                        <li>.NET</li>
+                        <li>Java</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Frameworks/Libraries</h3>
+                    <ul>
+                        <li>Node.js</li>
+                        <li>React</li>
+                        <li>React Native</li>
+                        <li>Express</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>DevOps/Infrastructure</h3>
+                    <ul>
+                        <li>Docker</li>
+                        <li>Kubernetes</li>
+                        <li>Terraform</li>
+                        <li>CI/CD</li>
+                        <li>AWS</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Datastores</h3>
+                    <ul>
+                        <li>PostgreSQL</li>
+                        <li>MongoDB</li>
+                        <li>Cassandra</li>
+                        <li>DynamoDB</li>
+                        <li>Snowflake</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Architecture</h3>
+                    <ul>
+                        <li>Distributed Systems</li>
+                        <li>SOA</li>
+                        <li>Kafka</li>
+                        <li>TDD</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="resume-section">
+            <h2>Education</h2>
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Bachelor of Science in Computer Science</span>
+                    </div>
+                    <span class="job-dates">2006 - 2010</span>
+                </div>
+                <div class="company">University of Arkansas</div>
+                <div class="job-location">Fayetteville, AR</div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
