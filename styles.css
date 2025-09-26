@@ -5,28 +5,46 @@
 }
 
 :root {
-    /* Mid-century modern cottage core palette */
-  
-    
-    /* Alternative options - uncomment to try */
-    
-    /* Option 2: Warmer sage */
-    /* --bg: #5d6b5a;
-    --text: #fdf9f3;
-    --text-dim: #ddd0b8;
-    --accent: #9b8469; */
-    
-    /* Option 3: Deep forest */
-    --bg: #3e4a3d;
-    --text: #f9f4ec;
-    --text-dim: #d6c9b3;
-    --accent: #a08974;
-    
-    /* Option 4: Olive tones */
-    /* --bg: #565c4a;
-    --text: #fefaf2;
-    --text-dim: #ded2b9;
-    --accent: #b8956f; */
+    /* DEFAULT: Sage & Cream - Professional cottagecore */
+
+
+    /* To try different themes, uncomment ONE of the options below: */
+
+    /* OPTION 1: Warm Linen & Clay */
+    /* --bg: #faf7f2;
+    --bg-alt: #f0ebe3;
+    --text: #3a3028;
+    --text-dim: #6b5d4f;
+    --accent: #a67c52;
+    --accent-hover: #8b6239;
+    --border: rgba(166, 124, 82, 0.2); */
+
+    /* OPTION 2: Eucalyptus & Sand */
+    --bg: #fdfbf7;
+    --bg-alt: #f3ede5;
+    --text: #2f3b34;
+    --text-dim: #5c6961;
+    --accent: #7a9881;
+    --accent-hover: #638069;
+    --border: rgba(122, 152, 129, 0.2);
+
+    /* OPTION 3: Mushroom & Moss (Subtle green) */
+    /* --bg: #f7f4f0;
+    --bg-alt: #ebe6df;
+    --text: #2e2d2a;
+    --text-dim: #5f5c57;
+    --accent: #7d8471;
+    --accent-hover: #656b5b;
+    --border: rgba(125, 132, 113, 0.2); */
+
+    /* OPTION 4: Forest Floor (Dark mode) */
+    /* --bg: #2b3029;
+    --bg-alt: #232721;
+    --text: #f4f0e8;
+    --text-dim: #c8bfaf;
+    --accent: #a09176;
+    --accent-hover: #b8a489;
+    --border: rgba(160, 145, 118, 0.3); */
 }
 
 html, body {
@@ -80,7 +98,7 @@ nav .nav {
 }
 
 .nav a:hover {
-    color: var(--accent);
+    color: var(--accent-hover, var(--accent));
 }
 
 main {
@@ -146,13 +164,13 @@ main {
 }
 
 .about a:hover {
-    border-bottom-color: var(--accent);
+    border-bottom-color: var(--accent-hover, var(--accent));
 }
 
 .currently-reading {
     margin-top: 2rem;
     padding-top: 1.5rem;
-    border-top: 1px solid rgba(127, 166, 109, 0.2);
+    border-top: 1px solid var(--border);
 }
 
 .reading-label {
@@ -176,7 +194,7 @@ main {
 .contact-links {
     margin-top: 1.5rem;
     padding-top: 1.5rem;
-    border-top: 1px solid rgba(127, 166, 109, 0.2);
+    border-top: 1px solid var(--border);
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
@@ -250,8 +268,9 @@ main {
 }
 
 .button:hover {
-    border-color: var(--accent);
-    color: var(--accent);
+    border-color: var(--accent-hover, var(--accent));
+    color: var(--accent-hover, var(--accent));
+    background-color: var(--bg-alt);
 }
 
 /* Berm Brain specific styles */
@@ -260,7 +279,7 @@ main {
     line-height: 1.8;
     margin-bottom: 2rem;
     padding: 1.5rem;
-    background-color: rgba(127, 166, 109, 0.1);
+    background-color: var(--bg-alt);
     border-radius: 8px;
 }
 
@@ -300,7 +319,7 @@ main {
 .beta-signup {
     margin-top: 3rem;
     padding: 2rem;
-    background-color: rgba(127, 166, 109, 0.1);
+    background-color: var(--bg-alt);
     border-radius: 8px;
     text-align: center;
 }
@@ -390,7 +409,7 @@ main {
     border-radius: 8px;
     cursor: pointer;
     transition: transform 0.3s ease;
-    background-color: var(--bg-light);
+    background-color: var(--bg-alt);
     position: relative;
     height: 300px;
     display: flex;
@@ -428,9 +447,10 @@ main {
 }
 
 .gallery-card h3 {
-    color: var(--text);
+    color: #ffffff;
     font-size: 1.5rem;
     font-weight: 300;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 #gallery {
@@ -457,7 +477,8 @@ main {
     overflow: hidden;
     border-radius: 4px;
     cursor: pointer;
-    background-color: rgba(127, 166, 109, 0.1);
+    background-color: var(--bg-alt);
+    border: 1px solid var(--border);
     position: relative;
 }
 
@@ -503,15 +524,77 @@ main {
     right: 2rem;
     background: none;
     border: none;
-    color: var(--text);
+    color: #ffffff;
     font-size: 3rem;
     cursor: pointer;
     opacity: 0.8;
     transition: opacity 0.3s ease;
+    z-index: 1002;
 }
 
 .close-btn:hover {
     opacity: 1;
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+}
+
+.nav-btn:hover {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.7);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.nav-prev {
+    left: 2rem;
+}
+
+.nav-next {
+    right: 2rem;
+}
+
+.photo-counter {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    z-index: 1001;
+}
+
+@media (max-width: 768px) {
+    .nav-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .nav-prev {
+        left: 1rem;
+    }
+
+    .nav-next {
+        right: 1rem;
+    }
 }
 
 .back-link {
@@ -526,7 +609,7 @@ main {
 }
 
 .back-link:hover {
-    color: var(--accent);
+    color: var(--accent-hover, var(--accent));
 }
 
 @media (max-width: 768px) {

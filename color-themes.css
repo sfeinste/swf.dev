@@ -1,0 +1,156 @@
+/* COTTAGECORE COLOR THEMES - Professional yet Earthy */
+
+/* Theme 1: Warm Linen & Clay */
+.theme-warm-linen {
+    --bg: #faf7f2;           /* Warm off-white background */
+    --bg-alt: #f0ebe3;       /* Slightly darker for sections */
+    --text: #3a3028;         /* Dark brown text */
+    --text-dim: #6b5d4f;     /* Muted brown */
+    --accent: #a67c52;       /* Terracotta accent */
+    --accent-hover: #8b6239; /* Darker terracotta */
+    --border: rgba(166, 124, 82, 0.2);
+}
+
+/* Theme 2: Sage & Cream */
+.theme-sage-cream {
+    --bg: #f9f6f1;           /* Creamy white background */
+    --bg-alt: #e8e2d9;       /* Light beige */
+    --text: #2c3e2c;         /* Deep forest green text */
+    --text-dim: #5a6b5a;     /* Sage green */
+    --accent: #7a8f62;       /* Olive sage accent */
+    --accent-hover: #647550; /* Darker sage */
+    --border: rgba(122, 143, 98, 0.2);
+}
+
+/* Theme 3: Dusty Rose & Stone */
+.theme-dusty-rose {
+    --bg: #fdfcfa;           /* Almost white with warm tint */
+    --bg-alt: #f5f0ea;       /* Light stone */
+    --text: #3d3835;         /* Charcoal brown */
+    --text-dim: #736862;     /* Warm gray */
+    --accent: #b08d7a;       /* Dusty rose/mauve */
+    --accent-hover: #967264; /* Deeper rose */
+    --border: rgba(176, 141, 122, 0.2);
+}
+
+/* Theme 4: Eucalyptus & Sand */
+.theme-eucalyptus {
+    --bg: #fdfbf7;           /* Warm white background */
+    --bg-alt: #f3ede5;       /* Sandy beige */
+    --text: #2f3b34;         /* Dark eucalyptus */
+    --text-dim: #5c6961;     /* Muted green-gray */
+    --accent: #7a9881;       /* Eucalyptus accent */
+    --accent-hover: #638069; /* Darker eucalyptus */
+    --border: rgba(122, 152, 129, 0.2);
+}
+
+/* Theme 5: Mushroom & Moss (Subtle green) */
+.theme-mushroom-moss {
+    --bg: #f7f4f0;           /* Light mushroom */
+    --bg-alt: #ebe6df;       /* Darker mushroom */
+    --text: #2e2d2a;         /* Almost black */
+    --text-dim: #5f5c57;     /* Dark taupe */
+    --accent: #7d8471;       /* Moss green accent */
+    --accent-hover: #656b5b; /* Darker moss */
+    --border: rgba(125, 132, 113, 0.2);
+}
+
+/* Theme 6: Blue Wildflower & Wheat */
+.theme-wildflower {
+    --bg: #fcfaf7;           /* Cream white */
+    --bg-alt: #f2ede6;       /* Light wheat */
+    --text: #33342f;         /* Dark charcoal */
+    --text-dim: #606158;     /* Gray-brown */
+    --accent: #7a8fa0;       /* Dusty blue accent */
+    --accent-hover: #637484; /* Deeper blue */
+    --border: rgba(122, 143, 160, 0.15);
+}
+
+/* Theme 7: Forest Floor (Dark mode option) */
+.theme-forest-dark {
+    --bg: #2b3029;           /* Dark forest green */
+    --bg-alt: #232721;       /* Darker green */
+    --text: #f4f0e8;         /* Warm white text */
+    --text-dim: #c8bfaf;     /* Muted cream */
+    --accent: #a09176;       /* Golden brown accent */
+    --accent-hover: #b8a489; /* Lighter golden */
+    --border: rgba(160, 145, 118, 0.3);
+}
+
+/* Theme 8: Clay & Lavender */
+.theme-clay-lavender {
+    --bg: #faf8f5;           /* Off-white */
+    --bg-alt: #ede8e2;       /* Light clay */
+    --text: #3a3330;         /* Dark warm gray */
+    --text-dim: #6b605a;     /* Medium brown-gray */
+    --accent: #9b8b9f;       /* Muted lavender */
+    --accent-hover: #7d6e82; /* Deeper lavender */
+    --border: rgba(155, 139, 159, 0.2);
+}
+
+/* Theme 9: Honey & Thyme */
+.theme-honey-thyme {
+    --bg: #fffcf5;           /* Light honey */
+    --bg-alt: #f5eee2;       /* Deeper honey */
+    --text: #342f29;         /* Dark brown */
+    --text-dim: #605549;     /* Medium brown */
+    --accent: #b89968;       /* Golden honey accent */
+    --accent-hover: #9d7f52; /* Darker honey */
+    --border: rgba(184, 153, 104, 0.2);
+}
+
+/* Theme 10: Morning Mist (Very subtle) */
+.theme-morning-mist {
+    --bg: #fbfbfa;           /* Nearly white */
+    --bg-alt: #f0efed;       /* Light gray */
+    --text: #2d2d2b;         /* Near black */
+    --text-dim: #62625e;     /* Medium gray */
+    --accent: #8a9a8c;       /* Soft green-gray accent */
+    --accent-hover: #708072; /* Darker green-gray */
+    --border: rgba(138, 154, 140, 0.15);
+}
+
+/* Apply background gradients for subtle depth */
+.gradient-bg {
+    background: linear-gradient(135deg, var(--bg) 0%, var(--bg-alt) 100%);
+    min-height: 100vh;
+}
+
+/* Subtle texture overlay option */
+.texture-bg {
+    position: relative;
+}
+
+.texture-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.03;
+    background-image:
+        repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(0,0,0,.01) 35px, rgba(0,0,0,.01) 70px);
+    pointer-events: none;
+}
+
+/* Section backgrounds for alternating colors */
+.alt-section {
+    background-color: var(--bg-alt);
+    padding: 3rem 0;
+    margin: 2rem 0;
+}
+
+/* Card backgrounds for light themes */
+.card-bg {
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+/* For gallery items and feature boxes */
+.surface-bg {
+    background-color: var(--bg-alt);
+    border-radius: 4px;
+}

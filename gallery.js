@@ -81,39 +81,59 @@ class Gallery {
         // Click on gallery items to open fullscreen
         document.getElementById('gallery').addEventListener('click', (e) => {
             if (e.target.tagName === 'IMG') {
-                this.openFullscreen(e.target.dataset.index);
+                this.openFullscreen(parseInt(e.target.dataset.index));
             }
         });
 
-        // Close fullscreen on escape or click
+        // Keyboard navigation
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 this.closeFullscreen();
+            } else if (e.key === 'ArrowLeft') {
+                this.navigatePrev();
+            } else if (e.key === 'ArrowRight') {
+                this.navigateNext();
             }
         });
     }
 
     openFullscreen(index) {
+        this.currentIndex = index;
         const photo = this.photos[index];
-        
+
         // Create fullscreen overlay
         const overlay = document.createElement('div');
         overlay.className = 'fullscreen-overlay';
         overlay.innerHTML = `
+            <button class="nav-btn nav-prev" aria-label="Previous photo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 18l-6-6 6-6"/>
+                </svg>
+            </button>
             <img src="photos/${this.galleryType}/${encodeURIComponent(photo)}" alt="${photo}">
+            <button class="nav-btn nav-next" aria-label="Next photo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18l6-6-6-6"/>
+                </svg>
+            </button>
             <button class="close-btn">&times;</button>
+            <div class="photo-counter">${index + 1} / ${this.photos.length}</div>
         `;
-        
+
         document.body.appendChild(overlay);
         document.body.style.overflow = 'hidden';
-        
-        // Add click handler to close
+
+        // Add click handlers
         overlay.addEventListener('click', (e) => {
-            if (e.target === overlay || e.target.className === 'close-btn') {
+            if (e.target === overlay || e.target.classList.contains('close-btn')) {
                 this.closeFullscreen();
+            } else if (e.target.closest('.nav-prev')) {
+                this.navigatePrev();
+            } else if (e.target.closest('.nav-next')) {
+                this.navigateNext();
             }
         });
-        
+
         // Fade in
         setTimeout(() => overlay.classList.add('active'), 10);
     }
@@ -124,6 +144,37 @@ class Gallery {
             overlay.classList.remove('active');
             document.body.style.overflow = '';
             setTimeout(() => overlay.remove(), 300);
+            this.currentIndex = null;
+        }
+    }
+
+    navigatePrev() {
+        if (this.currentIndex === null || this.currentIndex === undefined) return;
+        this.currentIndex = (this.currentIndex - 1 + this.photos.length) % this.photos.length;
+        this.updateFullscreenImage();
+    }
+
+    navigateNext() {
+        if (this.currentIndex === null || this.currentIndex === undefined) return;
+        this.currentIndex = (this.currentIndex + 1) % this.photos.length;
+        this.updateFullscreenImage();
+    }
+
+    updateFullscreenImage() {
+        const overlay = document.querySelector('.fullscreen-overlay');
+        if (!overlay) return;
+
+        const photo = this.photos[this.currentIndex];
+        const img = overlay.querySelector('img');
+        const counter = overlay.querySelector('.photo-counter');
+
+        if (img) {
+            img.src = `photos/${this.galleryType}/${encodeURIComponent(photo)}`;
+            img.alt = photo;
+        }
+
+        if (counter) {
+            counter.textContent = `${this.currentIndex + 1} / ${this.photos.length}`;
         }
     }
 }
