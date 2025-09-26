@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spruce Feinstein - Staff Software Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #2c3e2c;
+            background: white;
+            line-height: 1.5;
+            font-size: 10.5pt;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px 40px;
+        }
+        
+        /* Header */
+        header {
+            border-bottom: 2px solid #5a6d5a;
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+        
+        h1 {
+            font-family: 'Lora', Georgia, serif;
+            font-size: 28pt;
+            font-weight: 500;
+            color: #3e4a3d;
+            margin-bottom: 8px;
+        }
+        
+        .subtitle {
+            font-size: 13pt;
+            color: #5a6d5a;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 10pt;
+            color: #555;
+        }
+        
+        .contact-info a {
+            color: #5a6d5a;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .contact-info span:not(:last-child)::after {
+            content: "•";
+            margin-left: 15px;
+            color: #bbb;
+        }
+        
+        /* Sections */
+        section {
+            margin-bottom: 25px;
+        }
+        
+        h2 {
+            font-family: 'Lora', Georgia, serif;
+            font-size: 14pt;
+            color: #3e4a3d;
+            border-bottom: 1px solid #d6c9b3;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        /* Summary */
+        .summary {
+            font-size: 10.5pt;
+            color: #444;
+            text-align: justify;
+            margin-bottom: 5px;
+        }
+        
+        /* Experience */
+        .job {
+            margin-bottom: 20px;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+        
+        .job-title {
+            font-weight: 600;
+            font-size: 11pt;
+            color: #2c3e2c;
+        }
+        
+        .company {
+            color: #5a6d5a;
+            font-weight: 500;
+        }
+        
+        .job-dates {
+            font-size: 9.5pt;
+            color: #777;
+            white-space: nowrap;
+        }
+        
+        .job-location {
+            font-size: 9.5pt;
+            color: #777;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+        
+        .job-description {
+            font-size: 10pt;
+            color: #444;
+            text-align: justify;
+            line-height: 1.4;
+        }
+        
+        /* Skills */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px 30px;
+        }
+        
+        .skill-category {
+            break-inside: avoid;
+        }
+        
+        .skill-category h3 {
+            font-size: 10pt;
+            font-weight: 600;
+            color: #5a6d5a;
+            margin-bottom: 5px;
+        }
+        
+        .skill-list {
+            font-size: 9.5pt;
+            color: #444;
+            line-height: 1.3;
+        }
+        
+        /* Print optimization */
+        @media print {
+            body {
+                font-size: 10pt;
+            }
+            
+            .container {
+                padding: 0;
+                max-width: 100%;
+            }
+            
+            h1 {
+                font-size: 24pt;
+            }
+            
+            .subtitle {
+                font-size: 12pt;
+            }
+            
+            h2 {
+                font-size: 12pt;
+                page-break-after: avoid;
+            }
+            
+            .job {
+                page-break-inside: avoid;
+            }
+            
+            .skill-category {
+                page-break-inside: avoid;
+            }
+        }
+        
+        @page {
+            margin: 0.5in;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Spruce Feinstein</h1>
+            <div class="subtitle">Staff Software Engineer</div>
+            <div class="contact-info">
+                <span><a href="mailto:sprucefeinstein@gmail.com">sprucefeinstein@gmail.com</a></span>
+                <span>Bentonville, AR</span>
+                <span><a href="https://swf.dev">swf.dev</a></span>
+                <span><a href="https://github.com/sfeinste">github.com/sfeinste</a></span>
+            </div>
+        </header>
+
+        <section>
+            <h2>Professional Summary</h2>
+            <p class="summary">
+                Staff Software Engineer with 10+ years of experience designing and delivering scalable, cloud-native systems. 
+                Expert in full-stack development, microservices architecture, and distributed systems. Proven track record of 
+                technical leadership, mentoring engineering teams, and delivering high-impact solutions for SaaS platforms 
+                handling millions of users and billions in transactions. Specialized in Node.js, React, TypeScript, Kubernetes, 
+                and event-driven architectures using Kafka.
+            </p>
+        </section>
+
+        <section>
+            <h2>Experience</h2>
+            
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Staff Software Engineer</span> • <span class="company">Shaper Tools</span>
+                    </div>
+                    <span class="job-dates">October 2022 - Present</span>
+                </div>
+                <div class="job-location">Remote</div>
+                <div class="job-description">
+                    Lead development of cloud-native web services and React applications for IoT-connected robotic tools. 
+                    Architected and implemented scalable file storage platform using PostgreSQL, DynamoDB, and MongoDB. 
+                    Built real-time telemetry systems for fleet management, OTA updates, and device monitoring. Developed 
+                    browser-based vector design tool using TypeScript, React, and Canvas APIs. Tech stack: Node.js, TypeScript, 
+                    React, Kubernetes, Docker, AWS, PostgreSQL, MongoDB, DynamoDB.
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Senior Software Engineer</span> • <span class="company">RaiseRight</span>
+                    </div>
+                    <span class="job-dates">October 2021 - October 2022</span>
+                </div>
+                <div class="job-location">Remote</div>
+                <div class="job-description">
+                    Developed high-volume eCommerce platform processing $800M+ annual transactions with 99.99% uptime. 
+                    Built payment processing systems, mobile applications, and RESTful APIs. Implemented security measures 
+                    for PCI compliance and data protection. Optimized database queries reducing response time by 40%. 
+                    Tech stack: React, React Native, TypeScript, .NET Core, C#, SQL Server, Redis, Azure.
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Lead Architect</span> • <span class="company">Nacelle</span>
+                    </div>
+                    <span class="job-dates">April 2021 - October 2021</span>
+                </div>
+                <div class="job-location">Remote</div>
+                <div class="job-description">
+                    Architected event-driven microservices platform supporting 5M+ daily active users. Designed scalable 
+                    Kafka-based data pipeline processing 100K+ events/second. Implemented distributed caching and database 
+                    sharding strategies. Built RESTful and GraphQL APIs for headless commerce. Led architecture reviews and 
+                    technical design sessions. Tech stack: Node.js, TypeScript, Kafka, Cassandra, Redis, GraphQL, Kubernetes.
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Senior Software Engineer</span> • <span class="company">J.B. Hunt Transport Services</span>
+                    </div>
+                    <span class="job-dates">April 2020 - April 2021</span>
+                </div>
+                <div class="job-location">Arkansas</div>
+                <div class="job-description">
+                    Led cloud migration initiative reducing infrastructure costs by 35%. Developed React Native mobile 
+                    applications and Java Spring Boot microservices. Implemented CI/CD pipelines using Github and Azure DevOps. 
+                    Containerized 20+ legacy applications using Docker and Kubernetes. Mentored team on cloud-native best 
+                    practices. Tech stack: React Native, Java, Spring Boot, Kubernetes, Docker, Azure, PostgreSQL.
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Software Architect</span> • <span class="company">RevUnit</span>
+                    </div>
+                    <span class="job-dates">October 2016 - April 2020</span>
+                </div>
+                <div class="job-location">Arkansas</div>
+                <div class="job-description">
+                    Solutions Architect for Fortune 500 enterprise clients. Led cross-functional teams of 5-15 engineers. 
+                    Designed microservices architectures and end to end technical solutions. Implemented Infrastructure as Code using Terraform. 
+                    Built CI/CD pipelines reducing deployment time by 70%. Established monitoring and alerting systems using 
+                    Prometheus and Grafana. Tech stack: Node.js, React, Docker, Kubernetes, Terraform, AWS, Jenkins.
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Software Engineer</span> • <span class="company">CaseStack</span>
+                    </div>
+                    <span class="job-dates">April 2015 - September 2016</span>
+                </div>
+                <div class="job-location">Arkansas</div>
+                <div class="job-description">
+                    Full-stack engineer building logistics platform managing $2B+ annual inventory. Developed RESTful APIs 
+                    and real-time tracking systems. Implemented microservices architecture using MEAN stack. Optimized 
+                    MongoDB queries improving performance by 60%. Managed Kubernetes clusters and automated deployments. 
+                    Tech stack: MongoDB, Express.js, Angular, Node.js, TypeScript, Kubernetes, Docker.
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Architecture & Design</h3>
+                    <div class="skill-list">
+                        Microservices Architecture, Distributed Systems, Event-Driven Architecture, System Design, RESTful APIs, GraphQL, Design Patterns, Scalability, High Availability
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Languages & Frameworks</h3>
+                    <div class="skill-list">
+                        JavaScript, TypeScript, Node.js, React, React Native, Java, C#, Python, Express.js, Next.js, Spring Boot, .NET Core
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Cloud & DevOps</h3>
+                    <div class="skill-list">
+                        AWS (EC2, S3, Lambda, RDS), Kubernetes, Docker, CI/CD, Jenkins, GitLab, Terraform, Infrastructure as Code, Monitoring, Linux
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Databases & Messaging</h3>
+                    <div class="skill-list">
+                        PostgreSQL, MongoDB, MySQL, DynamoDB, Redis, Cassandra, Apache Kafka, RabbitMQ, SQL, NoSQL, Data Modeling
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Leadership & Methodologies</h3>
+                    <div class="skill-list">
+                        Technical Leadership, Team Mentoring, Agile/Scrum, Code Reviews, Architecture Reviews, Technical Documentation, Cross-functional Collaboration
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
